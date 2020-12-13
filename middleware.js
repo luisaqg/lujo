@@ -7,6 +7,7 @@ const postMiddleWare = (req, res, next)=>{
 const getMiddleWare = (req, res, next)=>{
     const parametro = parseInt(req.params.id, 10);
     if (typeof parametro == "number"  && !isNaN(parametro)){
+        req.id = parametro;
         next();
     }else{
         res.send('Información erronea');
